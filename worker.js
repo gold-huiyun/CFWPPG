@@ -14,10 +14,10 @@ export default {
     const LOGIN_PAGE    = `${BASE_PATH}/login`;
     const LOGIN_API     = `${BASE_PATH}/__auth`;
 
-    // Secrets & KV
+    // 变量Secrets & KV
     const AUTH_PASSWORD = env.AUTH_PASSWORD; // 认证密码，在worker设置中变量添加
     const COOKIE_SECRET = env.COOKIE_SECRET; // 13位随机字符，在worker设置中变量添加
-    const KV            = env.AUTH_STORE;    // 先在存储和数据库创建 Workers KV，名称随意，然后在work绑定-添加绑定-KV 命名空间-变量名称AUTH_STORE，并选择你创建的KV
+    const KV            = env.AUTH_STORE;    // ※先在存储和数据库创建 Workers KV，名称随意，然后在work绑定-添加绑定-KV 命名空间-变量名称AUTH_STORE，并选择你创建的KV
     if (!AUTH_PASSWORD || !COOKIE_SECRET || !KV) {
       return new Response("Server not configured. Missing AUTH_PASSWORD / COOKIE_SECRET / AUTH_STORE.", { status: 500 });
     }
